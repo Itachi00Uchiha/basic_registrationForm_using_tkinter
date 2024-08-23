@@ -23,11 +23,10 @@ def submit_to_db():
 
     cursor = conn.cursor()
 
-    # Insert data from data into database
+    # Inserting data into database
     cursor.execute("INSERT INTO registrations (name, surname, gender, contact, email) VALUES (%s, %s, %s, %s, %s)",
                    (name_value.get(), surname_value.get(), gender_value.get(), contact_value.get(), email_value.get()))
 
-    # commit the transaction
     conn.commit()
 
     # Close the connection
